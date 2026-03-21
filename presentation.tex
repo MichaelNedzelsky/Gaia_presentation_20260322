@@ -1,0 +1,327 @@
+\documentclass[aspectratio=169,14pt]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{siunitx}
+
+\title{The Gaia Mission}
+\subtitle{Mapping the Milky Way}
+\author{Michael Nedzelsky}
+\institute{Institute of Astronomy, University of Cambridge}
+\date{22 March 2026}
+
+\begin{document}
+
+% ============================================================
+\begin{frame}
+\titlepage
+\end{frame}
+
+% ============================================================
+\begin{frame}{Where Are We Right Now?}
+
+\begin{center}
+\Large Let's point to some objects in space!
+\end{center}
+
+\bigskip
+
+\begin{itemize}
+    \item \textbf{The Sun} --- somewhere outside this window
+    \item \textbf{The centre of our Galaxy} --- below the floor!
+    \item \textbf{The Andromeda Galaxy} --- almost directly above us
+\end{itemize}
+
+\bigskip
+
+\begin{center}
+\small (Directions are for Cambridge, 22 March, 11:00\,AM)
+\end{center}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}{How Far? --- The Solar System}
+
+\begin{center}
+\Large If the Sun were a \textbf{basketball}\ldots
+\end{center}
+
+\bigskip
+
+\begin{tabular}{lcc}
+\toprule
+\textbf{Object} & \textbf{Size} & \textbf{Distance} \\
+\midrule
+Sun          & Basketball (24\,cm)  & --- \\
+Earth        & Peppercorn (2\,mm)   & 26\,m \\
+Jupiter      & Walnut (2.4\,cm)     & 134\,m \\
+Saturn       & Acorn (2\,cm)        & 247\,m \\
+Neptune      & Peanut (8\,mm)       & 774\,m \\
+\midrule
+Nearest star & Another basketball   & \textbf{6{,}900\,km!} \\
+\bottomrule
+\end{tabular}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}{How Far? --- The Galaxy}
+
+\begin{center}
+\Large If the Solar System were a \textbf{small coin}\ldots
+\end{center}
+
+\bigskip
+
+\begin{itemize}
+    \item The \textbf{Milky Way} would be the size of \textbf{Cambridge} ($\sim$20\,km)
+    \item The \textbf{Andromeda Galaxy} would be near \textbf{Edinburgh} ($\sim$500\,km)
+    \item The coin contains \textbf{our Sun} and all 8 planets
+    \item The galaxy contains \textbf{200--400 billion} such coins
+\end{itemize}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}{The Milky Way --- Our Home Galaxy}
+
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{itemize}
+    \item A spiral galaxy
+    \item Diameter: $\sim$100{,}000 light-years
+    \item 200--400 billion stars
+    \item Our Sun is about 26{,}000 light-years from the centre
+    \item One orbit around the centre takes $\sim$230 million years
+\end{itemize}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{images/milkyway.jpg}
+
+\smallskip
+\small Artist's impression based on Gaia data\\
+\tiny Credit: ESA/Gaia/DPAC, S.\,Payne-Wardenaar
+\end{center}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}{Star Catalogues Through History}
+
+\begin{tabular}{lrc}
+\toprule
+\textbf{Catalogue} & \textbf{Stars} & \textbf{Year} \\
+\midrule
+Hipparchus           & $\sim$850        & $\sim$129\,BC \\
+Ptolemy (Almagest)   & $\sim$1{,}022    & $\sim$150\,AD \\
+Ulugh Beg            & $\sim$994        & 1437 \\
+Tycho Brahe          & $\sim$1{,}000    & $\sim$1600 \\
+John Flamsteed       & $\sim$2{,}935    & 1725 \\
+\midrule
+Hipparcos (satellite)& 118{,}218       & 1997 \\
+\textbf{Gaia (satellite)} & \textbf{$\sim$2 billion} & \textbf{2022+} \\
+\bottomrule
+\end{tabular}
+
+\bigskip
+
+\begin{center}
+From 850 stars to 2{,}000{,}000{,}000 stars --- in 2{,}000 years
+\end{center}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}{What Is Gaia?}
+
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{itemize}
+    \item Space telescope launched by \textbf{ESA} in Dec 2013
+    \item Was at \textbf{L2}, 1.5 million\,km from Earth
+    \item Operated \textbf{11 years} (double the planned 5!)
+    \item Last observation: Jan 2025. Retired: Mar 2025
+    \item Measured for each star:
+    \begin{itemize}
+        \item \textbf{Position} (very precisely)
+        \item \textbf{Distance} (using parallax)
+        \item \textbf{Motion} (speed and direction)
+        \item \textbf{Colour and brightness}
+    \end{itemize}
+\end{itemize}
+\end{column}
+\begin{column}{0.43\textwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{images/gaia_satellite.jpg}
+
+\smallskip
+\tiny Credit: ESA/Gaia/DPAC
+\end{center}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}{Lagrange Point L2}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    % Sun
+    \shade[ball color=yellow] (-5,0) circle (0.8);
+    \node[below] at (-5,-1) {\textbf{Sun}};
+
+    % Earth
+    \shade[ball color=blue!60] (1.5,0) circle (0.35);
+    \node[below] at (1.5,-0.6) {\textbf{Earth}};
+
+    % L2 point
+    \fill[red] (3.8,0) circle (0.08);
+    \node[above] at (3.8,0.3) {\textbf{L2}};
+    \node[below, font=\small] at (3.8,-0.3) {1.5\,M\,km};
+
+    % Gaia
+    \node[font=\small, color=red!70!black] at (4.6,0.8) {Gaia};
+    \draw[->, red!70!black, thick] (4.4,0.6) -- (3.95,0.15);
+
+    % orbit hint
+    \draw[dashed, red!50, thick] (3.8,0) ellipse (0.5 and 0.7);
+
+    % Arrow Sun-Earth
+    \draw[<->, thick, gray] (-4.1,0.9) -- (1.1,0.9);
+    \node[above, font=\small, gray] at (-1.5,0.9) {150\,M\,km};
+
+    % L1 point (for context)
+    \fill[gray] (-0.3,0) circle (0.06);
+    \node[below, font=\scriptsize, gray] at (-0.3,-0.3) {L1};
+\end{tikzpicture}
+\end{center}
+
+\medskip
+
+\begin{itemize}
+    \item At L2, gravity of Sun and Earth together kept Gaia in a stable orbit
+    \item Always on the \textbf{night side} of Earth --- good for observing stars
+    \item Earth, Sun, and Moon were all behind Gaia's sunshield
+\end{itemize}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}{How Gaia Scans the Sky}
+
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{itemize}
+    \item Two telescopes separated by \textbf{106.5\textdegree}
+    \item Gaia \textbf{spun} once every 6 hours
+    \item The spin axis slowly \textbf{precessed} every $\sim$63 days
+    \item This scanning pattern covered the \textbf{entire sky}
+    \item Each star observed about \textbf{70+ times} over 11 years
+    \item Camera: \textbf{1 billion pixels} (106 CCDs) --- largest ever in space
+\end{itemize}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{images/gaia_scanning.png}
+
+\smallskip
+\tiny Credit: ESA/Gaia/DPAC
+\end{center}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}{Gaia's Results}
+
+\begin{columns}
+\begin{column}{0.48\textwidth}
+\begin{itemize}
+    \item \textbf{Data Release 3} (June 2022):
+    \begin{itemize}
+        \item $\sim$\textbf{1.8 billion} stars
+        \item Distances for $\sim$1.5 billion
+        \item Motions for $\sim$1.5 billion
+        \item Also: asteroids, galaxies, quasars
+    \end{itemize}
+    \smallskip
+    \item \textbf{DR4} expected late 2026
+    \item \textbf{DR5} (final) $\sim$2030
+    \smallskip
+    \item Over \textbf{12{,}000 papers} published
+\end{itemize}
+\end{column}
+\begin{column}{0.50\textwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{images/gaia_skymap.png}
+
+\smallskip
+\small Gaia's all-sky colour map\\
+\tiny Credit: ESA/Gaia/DPAC
+\end{center}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}{The Legacy of Star Catalogues}
+
+\begin{center}
+\Large
+Hipparchus's catalogue from 129\,BC\\
+was still used \textbf{1{,}500 years later}
+\end{center}
+
+\bigskip
+
+\begin{itemize}
+    \item Tycho Brahe's data led Kepler to discover the \textbf{laws of planetary motion}
+    \item The Hipparcos catalogue is still used today, \textbf{30 years} after publication
+    \item Gaia's catalogue will serve astronomy for \textbf{decades to come}
+\end{itemize}
+
+\bigskip
+
+\begin{center}
+\large\itshape
+There is a special satisfaction in knowing\\
+your work will be used long after you finish it.
+\end{center}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}{}
+
+\begin{center}
+\Huge Thank you!
+
+\bigskip
+\Large Questions?
+
+\bigskip
+\bigskip
+\normalsize
+Michael Nedzelsky\\
+Institute of Astronomy, Cambridge\\
+\texttt{gaia.ac.uk}
+\end{center}
+
+\end{frame}
+
+\end{document}
