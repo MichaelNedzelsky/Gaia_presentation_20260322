@@ -8,7 +8,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{tikz}
 \usepackage{booktabs}
 \usepackage{siunitx}
 
@@ -54,8 +53,9 @@
 
 \smallskip
 \small Andromeda Galaxy (M31)\\
+with the Moon at the same scale!\\
 2.5 million light-years away\\
-\tiny Credit: NASA, ESA, Hubble Heritage Team
+\tiny Credit: Adam Block, Tim Puckett (APOD)
 \end{center}
 \end{column}
 \end{columns}
@@ -191,45 +191,23 @@ From 850 stars to 2{,}000{,}000{,}000 stars --- in 2{,}000 years
 % ============================================================
 \begin{frame}{Lagrange Point L2}
 
+\begin{columns}
+\begin{column}{0.55\textwidth}
 \begin{center}
-\begin{tikzpicture}[scale=0.85]
-    % Sun
-    \shade[ball color=yellow] (-5,0) circle (0.8);
-    \node[below] at (-5,-1) {\textbf{Sun}};
+\includegraphics[width=\textwidth]{images/lagrange.jpg}
 
-    % Earth
-    \shade[ball color=blue!60] (1.5,0) circle (0.35);
-    \node[below] at (1.5,-0.6) {\textbf{Earth}};
-
-    % L2 point
-    \fill[red] (3.8,0) circle (0.08);
-    \node[above] at (3.8,0.3) {\textbf{L2}};
-    \node[below, font=\small] at (3.8,-0.3) {1.5\,M\,km};
-
-    % Gaia
-    \node[font=\small, color=red!70!black] at (4.6,0.8) {Gaia};
-    \draw[->, red!70!black, thick] (4.4,0.6) -- (3.95,0.15);
-
-    % orbit hint
-    \draw[dashed, red!50, thick] (3.8,0) ellipse (0.5 and 0.7);
-
-    % Arrow Sun-Earth
-    \draw[<->, thick, gray] (-4.1,0.9) -- (1.1,0.9);
-    \node[above, font=\small, gray] at (-1.5,0.9) {150\,M\,km};
-
-    % L1 point (for context)
-    \fill[gray] (-0.3,0) circle (0.06);
-    \node[below, font=\scriptsize, gray] at (-0.3,-0.3) {L1};
-\end{tikzpicture}
+\smallskip
+\tiny Credit: NASA/WMAP Science Team
 \end{center}
-
-\medskip
-
+\end{column}
+\begin{column}{0.43\textwidth}
 \begin{itemize}
     \item At L2, gravity of Sun and Earth together kept Gaia in a stable orbit
     \item Always on the \textbf{night side} of Earth --- good for observing stars
-    \item Earth, Sun, and Moon were all behind Gaia's sunshield
+    \item Sun, Earth, and Moon were all behind Gaia's sunshield
 \end{itemize}
+\end{column}
+\end{columns}
 
 \end{frame}
 
